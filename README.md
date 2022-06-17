@@ -23,8 +23,6 @@ To keep it simple (since this is just a task), when I write codes, I push also f
   
  * progress_indicators: ^1.0.0
   
- * cached_network_image: ^3.2.1
-  
  * sizer: ^2.0.15
   
  * animated_switch: ^0.0.1
