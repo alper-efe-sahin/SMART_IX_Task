@@ -10,7 +10,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-       print(ref.watch(authRepositoryProvider).getCurrentUser()!.uid);
     ref.listen<bool>(
       authStateProvider.select((value) => value.isUserSignedIn),
       (p, c) {

@@ -10,7 +10,6 @@ import 'package:smart_ix_task/presentation/pages/sign_in/constants/texts.dart';
 import 'package:smart_ix_task/presentation/pages/sign_in/widgets/phone_number_sign_in_section.dart';
 import 'package:smart_ix_task/presentation/providers/auth/anonymously_sign_in_state_provider.dart';
 import 'package:smart_ix_task/presentation/providers/auth/phone_sign_in_state_provider.dart';
-import 'package:smart_ix_task/presentation/providers/firebase/firebase_provider.dart';
 import 'package:smart_ix_task/presentation/routes/router.gr.dart';
 
 class BottomSectionOfThePage extends ConsumerWidget {
