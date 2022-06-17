@@ -35,7 +35,7 @@ class SignInPage extends ConsumerWidget {
       authStateProvider.select((state) => state.isUserSignedIn),
       (p, c) {
         if (c) {
-          AutoRouter.of(context).replace(const HomeRoute());
+          AutoRouter.of(context).replace(const RouteNavigator());
         } else if (!c) {
           AutoRouter.of(context).replace(const SignInRoute());
         }
