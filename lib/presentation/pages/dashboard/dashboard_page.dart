@@ -17,6 +17,10 @@ class DashboardPage extends ConsumerWidget {
         appBarAction: Icons.exit_to_app,
         appBarBackgroundColor: transparentColor,
         appBarIconColor: customIndigoBackgroundColor,
+        appBarTitleTextStyle: const TextStyle(
+          color: customIndigoColor,
+          fontWeight: FontWeight.w600,
+        ),
         actionsOnPressed: () => ref.read(authRepositoryProvider).signOut(),
       ),
       body: GridView.builder(
