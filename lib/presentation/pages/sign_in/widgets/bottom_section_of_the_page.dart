@@ -81,7 +81,7 @@ class BottomSectionOfThePage extends ConsumerWidget {
                   }
                 },
                 child: Container(
-                  margin: EdgeInsets.only(top: 7.h),
+                  margin: EdgeInsets.only(top: 5.h),
                   width: 22.w,
                   height: 10.h,
                   decoration: BoxDecoration(
@@ -105,20 +105,28 @@ class BottomSectionOfThePage extends ConsumerWidget {
                   ),
                 ),
               ),
-              InkWell(
-                onTap: () => ref.read(anonymousSignInStateProvider.notifier).signInAnonymously(),
-                child: Row(
-                  children: const [
-                    Icon(CupertinoIcons.person),
-                    CustomText(
-                      text: signInAnonymously,
-                      minFontSize: 20,
-                      maxFontSize: 25,
-                      textPadding: EdgeInsets.only(),
-                    )
-                  ],
+              Padding(
+                padding: EdgeInsets.only(top: 4.h),
+                child: InkWell(
+                  splashColor: transparentColor,
+                  highlightColor: transparentColor,
+                  onTap: () => ref.read(anonymousSignInStateProvider.notifier).signInAnonymously(),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(CupertinoIcons.person, size: 30),
+                      SizedBox(width: 10),
+                      CustomText(
+                        text: signInAnonymously,
+                        minFontSize: 22,
+                        maxFontSize: 27,
+                        textPadding: EdgeInsets.only(),
+                        textStyle: TextStyle(fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
                 ),
-              )
+              ),
             ],
           ),
         ),
