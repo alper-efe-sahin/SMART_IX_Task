@@ -10,14 +10,37 @@ import 'package:smart_ix_task/presentation/common_widgets/custom_app_bar.dart';
 import 'package:smart_ix_task/presentation/common_widgets/custom_progress_indicator.dart';
 import 'package:smart_ix_task/presentation/pages/sign_in/constants/texts.dart';
 import 'package:smart_ix_task/presentation/pages/sign_in/widgets/sign_in_body.dart';
+import 'package:smart_ix_task/presentation/providers/auth/anonymously_sign_in_state_provider.dart';
+import 'package:smart_ix_task/presentation/providers/auth/auth_state_provider.dart';
 import 'package:smart_ix_task/presentation/providers/auth/phone_sign_in_state_provider.dart';
+import 'package:smart_ix_task/presentation/routes/router.gr.dart';
 
 class SignInPage extends ConsumerWidget {
   const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isInProgress = ref.watch(phoneSignInStateProvider.select((state) => state.isInProgress));
+    final isInProgressForPhoneNumberSignIn = ref.watch(
+      phoneSignInStateProvider.select(
+        (state) => state.isInProgress,
+      ),
+    );
+    final isInProgressForAnonymouslySignIn = ref.watch(
+      anonymousSignInStateProvider.select(
+        (state) => state.isInProgress,
+      ),
+    );
+
+    ref.listen<bool>(
+      authStateProvider.select((state) => state.isUserSignedIn),
+      (p, c) {
+        if (c) {
+          AutoRouter.of(context).replace(const HomeRoute());
+        } else if (!c) {
+          AutoRouter.of(context).replace(const SignInRoute());
+        }
+      },
+    );
 
     ref.listen<PhoneSignInState>(
       phoneSignInStateProvider.select((state) => state),
@@ -46,7 +69,7 @@ class SignInPage extends ConsumerWidget {
 
     return WillPopScope(
       onWillPop: () => Future<bool>.value(false),
-      child: isInProgress
+      child: isInProgressForPhoneNumberSignIn || isInProgressForAnonymouslySignIn
           ? const Scaffold(
               body: CustomProgressIndicator(
                 progressIndicatorColor: blackColor,

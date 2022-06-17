@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
@@ -7,7 +8,9 @@ import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
 import 'package:smart_ix_task/presentation/common_widgets/custom_text.dart';
 import 'package:smart_ix_task/presentation/pages/sign_in/constants/texts.dart';
 import 'package:smart_ix_task/presentation/pages/sign_in/widgets/phone_number_sign_in_section.dart';
+import 'package:smart_ix_task/presentation/providers/auth/anonymously_sign_in_state_provider.dart';
 import 'package:smart_ix_task/presentation/providers/auth/phone_sign_in_state_provider.dart';
+import 'package:smart_ix_task/presentation/providers/firebase/firebase_provider.dart';
 import 'package:smart_ix_task/presentation/routes/router.gr.dart';
 
 class BottomSectionOfThePage extends ConsumerWidget {
@@ -100,6 +103,20 @@ class BottomSectionOfThePage extends ConsumerWidget {
                     size: 35,
                     color: whiteColor,
                   ),
+                ),
+              ),
+              InkWell(
+                onTap: () => ref.read(anonymousSignInStateProvider.notifier).signInAnonymously(),
+                child: Row(
+                  children: const [
+                    Icon(CupertinoIcons.person),
+                    CustomText(
+                      text: signInAnonymously,
+                      minFontSize: 20,
+                      maxFontSize: 25,
+                      textPadding: EdgeInsets.only(),
+                    )
+                  ],
                 ),
               )
             ],

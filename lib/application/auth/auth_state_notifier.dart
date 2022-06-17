@@ -19,7 +19,7 @@ class AuthStateNotifier extends StateNotifier<AuthState> {
           state = state.copyWith(
             user: AuthUserModel(
               id: user.uid,
-              phoneNumber: user.phoneNumber!,
+              phoneNumber: user.phoneNumber,
             ),
             isUserSignedIn: true,
           );

@@ -6,7 +6,7 @@ part 'auth_user_model.freezed.dart';
 class AuthUserModel with _$AuthUserModel {
   const factory AuthUserModel({
     required String id,
-    required String phoneNumber,
+    required String? phoneNumber,
   }) = _AuthUserModel;
 
   factory AuthUserModel.empty() => const AuthUserModel(

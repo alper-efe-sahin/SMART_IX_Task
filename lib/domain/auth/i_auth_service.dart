@@ -7,6 +7,7 @@ import 'package:smart_ix_task/domain/auth/auth_failure.dart';
 abstract class IAuthService {
   Stream<User?> get authStateChanges;
   Future<void> signOut();
+  Future<void> signInAnonymously();
   Stream<Either<AuthFailure, Tuple2<String, int?>>> signInWithPhoneNumber({
     required String phoneNumber,
     required Duration timeout,

@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AuthUserModel {
   String get id => throw _privateConstructorUsedError;
-  String get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AuthUserModelCopyWith<AuthUserModel> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $AuthUserModelCopyWith<$Res> {
   factory $AuthUserModelCopyWith(
           AuthUserModel value, $Res Function(AuthUserModel) then) =
       _$AuthUserModelCopyWithImpl<$Res>;
-  $Res call({String id, String phoneNumber});
+  $Res call({String id, String? phoneNumber});
 }
 
 /// @nodoc
@@ -54,7 +54,7 @@ class _$AuthUserModelCopyWithImpl<$Res>
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$_AuthUserModelCopyWith<$Res>
           _$_AuthUserModel value, $Res Function(_$_AuthUserModel) then) =
       __$$_AuthUserModelCopyWithImpl<$Res>;
   @override
-  $Res call({String id, String phoneNumber});
+  $Res call({String id, String? phoneNumber});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class __$$_AuthUserModelCopyWithImpl<$Res>
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -106,7 +106,7 @@ class _$_AuthUserModel implements _AuthUserModel {
   @override
   final String id;
   @override
-  final String phoneNumber;
+  final String? phoneNumber;
 
   @override
   String toString() {
@@ -138,12 +138,12 @@ class _$_AuthUserModel implements _AuthUserModel {
 abstract class _AuthUserModel implements AuthUserModel {
   const factory _AuthUserModel(
       {required final String id,
-      required final String phoneNumber}) = _$_AuthUserModel;
+      required final String? phoneNumber}) = _$_AuthUserModel;
 
   @override
   String get id => throw _privateConstructorUsedError;
   @override
-  String get phoneNumber => throw _privateConstructorUsedError;
+  String? get phoneNumber => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AuthUserModelCopyWith<_$_AuthUserModel> get copyWith =>
