@@ -5,9 +5,12 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("home page"),
+    return WillPopScope(
+      onWillPop: () => Future<bool>.value(false),
+      child: const Scaffold(
+        body: Center(
+          child: Text("home page"),
+        ),
       ),
     );
   }

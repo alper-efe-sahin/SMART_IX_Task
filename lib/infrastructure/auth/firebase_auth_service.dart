@@ -54,6 +54,7 @@ class FirebaseAuthService implements IAuthService {
         } else if (e.code == 'app-not-authorized') {
           result = left(const AuthFailure.deviceNotSupported());
         } else {
+          print(e);
           result = left(const AuthFailure.serverError());
         }
         streamController.add(result);
