@@ -10,8 +10,5 @@ class AnonymousSignInNotifier extends StateNotifier<AnonymousSignInState> {
     state = state.copyWith(isInProgress: true);
 
     await _read(authRepositoryProvider).signInAnonymously();
-
-
-
   }
 }

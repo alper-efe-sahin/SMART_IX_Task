@@ -5,10 +5,10 @@ part 'device_model.freezed.dart';
 @freezed
 class DeviceModel with _$DeviceModel {
   const factory DeviceModel({
-    required List<String> name,
+    required List<String> deviceNames,
   }) = _DeviceModel;
 
   factory DeviceModel.initial() => const DeviceModel(
-        name: ["Smart Watch", "Remotely Controllable Camera", "Thermostat"],
+        deviceNames: ["Smart Watch", "Remotely Controllable Camera", "Thermostat"],
       );
 }

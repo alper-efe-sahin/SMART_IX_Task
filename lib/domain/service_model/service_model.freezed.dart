@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ServiceModel {
-  List<String> get name => throw _privateConstructorUsedError;
+  List<String> get serviceNames => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ServiceModelCopyWith<ServiceModel> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $ServiceModelCopyWith<$Res> {
   factory $ServiceModelCopyWith(
           ServiceModel value, $Res Function(ServiceModel) then) =
       _$ServiceModelCopyWithImpl<$Res>;
-  $Res call({List<String> name});
+  $Res call({List<String> serviceNames});
 }
 
 /// @nodoc
@@ -41,12 +41,12 @@ class _$ServiceModelCopyWithImpl<$Res> implements $ServiceModelCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? serviceNames = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      serviceNames: serviceNames == freezed
+          ? _value.serviceNames
+          : serviceNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -59,7 +59,7 @@ abstract class _$$_ServiceModelCopyWith<$Res>
           _$_ServiceModel value, $Res Function(_$_ServiceModel) then) =
       __$$_ServiceModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<String> name});
+  $Res call({List<String> serviceNames});
 }
 
 /// @nodoc
@@ -75,12 +75,12 @@ class __$$_ServiceModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? serviceNames = freezed,
   }) {
     return _then(_$_ServiceModel(
-      name: name == freezed
-          ? _value._name
-          : name // ignore: cast_nullable_to_non_nullable
+      serviceNames: serviceNames == freezed
+          ? _value._serviceNames
+          : serviceNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -89,18 +89,19 @@ class __$$_ServiceModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ServiceModel implements _ServiceModel {
-  const _$_ServiceModel({required final List<String> name}) : _name = name;
+  const _$_ServiceModel({required final List<String> serviceNames})
+      : _serviceNames = serviceNames;
 
-  final List<String> _name;
+  final List<String> _serviceNames;
   @override
-  List<String> get name {
+  List<String> get serviceNames {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_name);
+    return EqualUnmodifiableListView(_serviceNames);
   }
 
   @override
   String toString() {
-    return 'ServiceModel(name: $name)';
+    return 'ServiceModel(serviceNames: $serviceNames)';
   }
 
   @override
@@ -108,12 +109,13 @@ class _$_ServiceModel implements _ServiceModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ServiceModel &&
-            const DeepCollectionEquality().equals(other._name, _name));
+            const DeepCollectionEquality()
+                .equals(other._serviceNames, _serviceNames));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_name));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_serviceNames));
 
   @JsonKey(ignore: true)
   @override
@@ -122,11 +124,11 @@ class _$_ServiceModel implements _ServiceModel {
 }
 
 abstract class _ServiceModel implements ServiceModel {
-  const factory _ServiceModel({required final List<String> name}) =
+  const factory _ServiceModel({required final List<String> serviceNames}) =
       _$_ServiceModel;
 
   @override
-  List<String> get name => throw _privateConstructorUsedError;
+  List<String> get serviceNames => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ServiceModelCopyWith<_$_ServiceModel> get copyWith =>

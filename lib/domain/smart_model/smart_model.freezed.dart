@@ -16,9 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SmartModel {
-  DeviceModel get devices => throw _privateConstructorUsedError;
-  ServiceModel get services => throw _privateConstructorUsedError;
-  bool get isEnabled => throw _privateConstructorUsedError;
+  DeviceModel? get devices => throw _privateConstructorUsedError;
+  ServiceModel? get services => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SmartModelCopyWith<SmartModel> get copyWith =>
@@ -30,10 +29,10 @@ abstract class $SmartModelCopyWith<$Res> {
   factory $SmartModelCopyWith(
           SmartModel value, $Res Function(SmartModel) then) =
       _$SmartModelCopyWithImpl<$Res>;
-  $Res call({DeviceModel devices, ServiceModel services, bool isEnabled});
+  $Res call({DeviceModel? devices, ServiceModel? services});
 
-  $DeviceModelCopyWith<$Res> get devices;
-  $ServiceModelCopyWith<$Res> get services;
+  $DeviceModelCopyWith<$Res>? get devices;
+  $ServiceModelCopyWith<$Res>? get services;
 }
 
 /// @nodoc
@@ -48,34 +47,37 @@ class _$SmartModelCopyWithImpl<$Res> implements $SmartModelCopyWith<$Res> {
   $Res call({
     Object? devices = freezed,
     Object? services = freezed,
-    Object? isEnabled = freezed,
   }) {
     return _then(_value.copyWith(
       devices: devices == freezed
           ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
-              as DeviceModel,
+              as DeviceModel?,
       services: services == freezed
           ? _value.services
           : services // ignore: cast_nullable_to_non_nullable
-              as ServiceModel,
-      isEnabled: isEnabled == freezed
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as ServiceModel?,
     ));
   }
 
   @override
-  $DeviceModelCopyWith<$Res> get devices {
-    return $DeviceModelCopyWith<$Res>(_value.devices, (value) {
+  $DeviceModelCopyWith<$Res>? get devices {
+    if (_value.devices == null) {
+      return null;
+    }
+
+    return $DeviceModelCopyWith<$Res>(_value.devices!, (value) {
       return _then(_value.copyWith(devices: value));
     });
   }
 
   @override
-  $ServiceModelCopyWith<$Res> get services {
-    return $ServiceModelCopyWith<$Res>(_value.services, (value) {
+  $ServiceModelCopyWith<$Res>? get services {
+    if (_value.services == null) {
+      return null;
+    }
+
+    return $ServiceModelCopyWith<$Res>(_value.services!, (value) {
       return _then(_value.copyWith(services: value));
     });
   }
@@ -88,12 +90,12 @@ abstract class _$$_SmartModelCopyWith<$Res>
           _$_SmartModel value, $Res Function(_$_SmartModel) then) =
       __$$_SmartModelCopyWithImpl<$Res>;
   @override
-  $Res call({DeviceModel devices, ServiceModel services, bool isEnabled});
+  $Res call({DeviceModel? devices, ServiceModel? services});
 
   @override
-  $DeviceModelCopyWith<$Res> get devices;
+  $DeviceModelCopyWith<$Res>? get devices;
   @override
-  $ServiceModelCopyWith<$Res> get services;
+  $ServiceModelCopyWith<$Res>? get services;
 }
 
 /// @nodoc
@@ -110,21 +112,16 @@ class __$$_SmartModelCopyWithImpl<$Res> extends _$SmartModelCopyWithImpl<$Res>
   $Res call({
     Object? devices = freezed,
     Object? services = freezed,
-    Object? isEnabled = freezed,
   }) {
     return _then(_$_SmartModel(
       devices: devices == freezed
           ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
-              as DeviceModel,
+              as DeviceModel?,
       services: services == freezed
           ? _value.services
           : services // ignore: cast_nullable_to_non_nullable
-              as ServiceModel,
-      isEnabled: isEnabled == freezed
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as ServiceModel?,
     ));
   }
 }
@@ -132,19 +129,16 @@ class __$$_SmartModelCopyWithImpl<$Res> extends _$SmartModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SmartModel implements _SmartModel {
-  const _$_SmartModel(
-      {required this.devices, required this.services, required this.isEnabled});
+  const _$_SmartModel({this.devices, this.services});
 
   @override
-  final DeviceModel devices;
+  final DeviceModel? devices;
   @override
-  final ServiceModel services;
-  @override
-  final bool isEnabled;
+  final ServiceModel? services;
 
   @override
   String toString() {
-    return 'SmartModel(devices: $devices, services: $services, isEnabled: $isEnabled)';
+    return 'SmartModel(devices: $devices, services: $services)';
   }
 
   @override
@@ -153,16 +147,14 @@ class _$_SmartModel implements _SmartModel {
         (other.runtimeType == runtimeType &&
             other is _$_SmartModel &&
             const DeepCollectionEquality().equals(other.devices, devices) &&
-            const DeepCollectionEquality().equals(other.services, services) &&
-            const DeepCollectionEquality().equals(other.isEnabled, isEnabled));
+            const DeepCollectionEquality().equals(other.services, services));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(devices),
-      const DeepCollectionEquality().hash(services),
-      const DeepCollectionEquality().hash(isEnabled));
+      const DeepCollectionEquality().hash(services));
 
   @JsonKey(ignore: true)
   @override
@@ -172,16 +164,13 @@ class _$_SmartModel implements _SmartModel {
 
 abstract class _SmartModel implements SmartModel {
   const factory _SmartModel(
-      {required final DeviceModel devices,
-      required final ServiceModel services,
-      required final bool isEnabled}) = _$_SmartModel;
+      {final DeviceModel? devices,
+      final ServiceModel? services}) = _$_SmartModel;
 
   @override
-  DeviceModel get devices => throw _privateConstructorUsedError;
+  DeviceModel? get devices => throw _privateConstructorUsedError;
   @override
-  ServiceModel get services => throw _privateConstructorUsedError;
-  @override
-  bool get isEnabled => throw _privateConstructorUsedError;
+  ServiceModel? get services => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_SmartModelCopyWith<_$_SmartModel> get copyWith =>

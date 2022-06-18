@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$DeviceModel {
-  List<String> get name => throw _privateConstructorUsedError;
+  List<String> get deviceNames => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DeviceModelCopyWith<DeviceModel> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $DeviceModelCopyWith<$Res> {
   factory $DeviceModelCopyWith(
           DeviceModel value, $Res Function(DeviceModel) then) =
       _$DeviceModelCopyWithImpl<$Res>;
-  $Res call({List<String> name});
+  $Res call({List<String> deviceNames});
 }
 
 /// @nodoc
@@ -41,12 +41,12 @@ class _$DeviceModelCopyWithImpl<$Res> implements $DeviceModelCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? deviceNames = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      deviceNames: deviceNames == freezed
+          ? _value.deviceNames
+          : deviceNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -59,7 +59,7 @@ abstract class _$$_DeviceModelCopyWith<$Res>
           _$_DeviceModel value, $Res Function(_$_DeviceModel) then) =
       __$$_DeviceModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<String> name});
+  $Res call({List<String> deviceNames});
 }
 
 /// @nodoc
@@ -74,12 +74,12 @@ class __$$_DeviceModelCopyWithImpl<$Res> extends _$DeviceModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? deviceNames = freezed,
   }) {
     return _then(_$_DeviceModel(
-      name: name == freezed
-          ? _value._name
-          : name // ignore: cast_nullable_to_non_nullable
+      deviceNames: deviceNames == freezed
+          ? _value._deviceNames
+          : deviceNames // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
   }
@@ -88,18 +88,19 @@ class __$$_DeviceModelCopyWithImpl<$Res> extends _$DeviceModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DeviceModel implements _DeviceModel {
-  const _$_DeviceModel({required final List<String> name}) : _name = name;
+  const _$_DeviceModel({required final List<String> deviceNames})
+      : _deviceNames = deviceNames;
 
-  final List<String> _name;
+  final List<String> _deviceNames;
   @override
-  List<String> get name {
+  List<String> get deviceNames {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_name);
+    return EqualUnmodifiableListView(_deviceNames);
   }
 
   @override
   String toString() {
-    return 'DeviceModel(name: $name)';
+    return 'DeviceModel(deviceNames: $deviceNames)';
   }
 
   @override
@@ -107,12 +108,13 @@ class _$_DeviceModel implements _DeviceModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_DeviceModel &&
-            const DeepCollectionEquality().equals(other._name, _name));
+            const DeepCollectionEquality()
+                .equals(other._deviceNames, _deviceNames));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_name));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_deviceNames));
 
   @JsonKey(ignore: true)
   @override
@@ -121,11 +123,11 @@ class _$_DeviceModel implements _DeviceModel {
 }
 
 abstract class _DeviceModel implements DeviceModel {
-  const factory _DeviceModel({required final List<String> name}) =
+  const factory _DeviceModel({required final List<String> deviceNames}) =
       _$_DeviceModel;
 
   @override
-  List<String> get name => throw _privateConstructorUsedError;
+  List<String> get deviceNames => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_DeviceModelCopyWith<_$_DeviceModel> get copyWith =>

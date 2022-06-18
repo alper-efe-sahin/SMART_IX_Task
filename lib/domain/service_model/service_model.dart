@@ -5,8 +5,8 @@ part 'service_model.freezed.dart';
 @freezed
 class ServiceModel with _$ServiceModel {
   const factory ServiceModel({
-    required List<String> name,
+    required List<String> serviceNames,
   }) = _ServiceModel;
 
-  factory ServiceModel.initial() => const ServiceModel(name: ["Weather", "News"]);
+  factory ServiceModel.initial() => const ServiceModel(serviceNames: ["Weather", "News"]);
 }

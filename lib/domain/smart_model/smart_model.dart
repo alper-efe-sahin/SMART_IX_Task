@@ -7,14 +7,12 @@ part 'smart_model.freezed.dart';
 @freezed
 class SmartModel with _$SmartModel {
   const factory SmartModel({
-    required DeviceModel devices,
-    required ServiceModel services,
-    required bool isEnabled,
+    DeviceModel? devices,
+    ServiceModel? services,
   }) = _SmartModel;
 
-  factory SmartModel.empty() => SmartModel(
+  factory SmartModel.initial() => SmartModel(
         devices: DeviceModel.initial(),
         services: ServiceModel.initial(),
-        isEnabled: true,
       );
 }
