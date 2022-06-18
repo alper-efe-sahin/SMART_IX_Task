@@ -11,7 +11,7 @@ class SmartItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
       width: 50.w,
       height: 10.h,
       decoration: const BoxDecoration(
