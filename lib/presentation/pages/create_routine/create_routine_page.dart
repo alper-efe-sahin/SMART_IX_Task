@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
 import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
 import 'package:smart_ix_task/presentation/pages/create_routine/widgets/create_routine_page_body.dart';
+import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
 import 'package:smart_ix_task/presentation/routes/router.gr.dart';
 
 class CreateRoutinePage extends ConsumerWidget {
@@ -31,6 +32,7 @@ class CreateRoutinePage extends ConsumerWidget {
             disabledColor: transparentColor,
             padding: const EdgeInsets.only(right: 45),
             onPressed: () {
+              ref.refresh(routineProvider);
               AutoRouter.of(context).replace(const RouteNavigator());
             },
             icon: const Icon(
