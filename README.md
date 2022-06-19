@@ -6,6 +6,9 @@
 * Also I get the phone number sign in codes/ui from my own project, you can see the project and images/gifs from here: 
 https://github.com/alper-efe-sahin/phone_number_sign_in_cubit
 
+## Dashboard
+<img width="273" alt="Ekran Resmi 2022-06-19 21 40 45" src="https://user-images.githubusercontent.com/67283777/174495736-5922a486-7ed8-4a14-bc27-d060324d70f1.png">
+
 ## How to use?
 This application has 2 sign-in methods: Firstly, you can sign in via your phone number, and second anonymously.
 
