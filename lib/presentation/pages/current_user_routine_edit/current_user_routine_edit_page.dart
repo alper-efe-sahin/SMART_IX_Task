@@ -1,0 +1,73 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sizer/sizer.dart';
+import 'package:smart_ix_task/application/routine/routine_event.dart';
+import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
+import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/widgets/create_routine_page_body.dart';
+import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
+import 'package:smart_ix_task/presentation/routes/router.gr.dart';
+
+class CurrentUserRoutineEditPage extends ConsumerWidget {
+  const CurrentUserRoutineEditPage(
+      this.currentServiceValue, this.currentDeviceValue, this.currentSelectedRoutineValue, this.isEnabled,
+      {Key? key})
+      : super(key: key);
+
+  final String currentServiceValue;
+  final String currentDeviceValue;
+  final String currentSelectedRoutineValue;
+  final bool isEnabled;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<bool>(
+      routineProvider.select((state) => state.isCreatingProcessCompletedSuccesfully),
+      (previousState, currentState) {
+        if (currentState == true) {
+          ref.read(routineProvider.notifier).mapEventsToState(const GetSmartItemList());
+          AutoRouter.of(context).replace(const RouteNavigator());
+        }
+      },
+    );
+
+    return WillPopScope(
+      onWillPop: () => Future<bool>.value(false),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: transparentColor,
+          shadowColor: transparentColor,
+          foregroundColor: transparentColor,
+          surfaceTintColor: transparentColor,
+          toolbarHeight: 50,
+          leadingWidth: 30.w,
+          leading: IconButton(
+            hoverColor: transparentColor,
+            highlightColor: transparentColor,
+            color: transparentColor,
+            splashColor: transparentColor,
+            focusColor: transparentColor,
+            disabledColor: transparentColor,
+            padding: const EdgeInsets.only(right: 45),
+            onPressed: () {
+              ref.refresh(routineProvider);
+              AutoRouter.of(context).replace(const RouteNavigator());
+            },
+            icon: const Icon(
+              CupertinoIcons.back,
+              color: customIndigoColor,
+              size: 40,
+            ),
+          ),
+        ),
+        body: CurrentUserRoutineEditPageBody(
+          currentServiceValue,
+          currentDeviceValue,
+          currentSelectedRoutineValue,
+          isEnabled,
+        ),
+      ),
+    );
+  }
+}
