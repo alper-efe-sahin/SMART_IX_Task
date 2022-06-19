@@ -100,7 +100,7 @@ class SmartItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const CustomText(
-                  text: routineText,
+                  text: routinesText,
                   minFontSize: 20,
                   maxFontSize: 22,
                   textPadding: EdgeInsets.only(),

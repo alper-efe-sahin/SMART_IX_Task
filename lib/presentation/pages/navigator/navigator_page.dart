@@ -48,7 +48,7 @@ class PageNavigator extends ConsumerWidget {
                 size: 28,
               ),
               title: const Text(
-                routineText,
+                routinesText,
                 style: TextStyle(fontSize: 17),
               ),
             ),

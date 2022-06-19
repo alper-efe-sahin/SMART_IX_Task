@@ -1,2 +1,2 @@
-const String dashboardText= "Dashboard";
-const String routineText = "Routine";
+const String dashboardText = "Dashboard";
+const String routinesText = "Routines";
