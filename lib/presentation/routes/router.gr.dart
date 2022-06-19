@@ -58,6 +58,7 @@ class AppRouter extends _i9.RootStackRouter {
               args.currentDeviceValue,
               args.currentSelectedRoutineValue,
               args.isEnabled,
+              args.smartItemId,
               key: args.key));
     },
     DashboardRoute.name: (routeData) {
@@ -144,6 +145,7 @@ class CurrentUserRoutineEditRoute
       required String currentDeviceValue,
       required String currentSelectedRoutineValue,
       required bool isEnabled,
+      required String smartItemId,
       _i10.Key? key})
       : super(CurrentUserRoutineEditRoute.name,
             path: '/current-user-routine-edit-page',
@@ -152,6 +154,7 @@ class CurrentUserRoutineEditRoute
                 currentDeviceValue: currentDeviceValue,
                 currentSelectedRoutineValue: currentSelectedRoutineValue,
                 isEnabled: isEnabled,
+                smartItemId: smartItemId,
                 key: key));
 
   static const String name = 'CurrentUserRoutineEditRoute';
@@ -163,6 +166,7 @@ class CurrentUserRoutineEditRouteArgs {
       required this.currentDeviceValue,
       required this.currentSelectedRoutineValue,
       required this.isEnabled,
+      required this.smartItemId,
       this.key});
 
   final String currentServiceValue;
@@ -173,11 +177,13 @@ class CurrentUserRoutineEditRouteArgs {
 
   final bool isEnabled;
 
+  final String smartItemId;
+
   final _i10.Key? key;
 
   @override
   String toString() {
-    return 'CurrentUserRoutineEditRouteArgs{currentServiceValue: $currentServiceValue, currentDeviceValue: $currentDeviceValue, currentSelectedRoutineValue: $currentSelectedRoutineValue, isEnabled: $isEnabled, key: $key}';
+    return 'CurrentUserRoutineEditRouteArgs{currentServiceValue: $currentServiceValue, currentDeviceValue: $currentDeviceValue, currentSelectedRoutineValue: $currentSelectedRoutineValue, isEnabled: $isEnabled, smartItemId: $smartItemId, key: $key}';
   }
 }
 

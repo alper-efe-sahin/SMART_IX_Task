@@ -24,6 +24,7 @@ mixin _$RoutineEvent {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$RoutineEvent {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +46,7 @@ mixin _$RoutineEvent {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +58,7 @@ mixin _$RoutineEvent {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +69,7 @@ mixin _$RoutineEvent {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +80,7 @@ mixin _$RoutineEvent {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -167,6 +173,7 @@ class _$SelectDevice implements SelectDevice {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return selectDevice(device);
   }
@@ -180,6 +187,7 @@ class _$SelectDevice implements SelectDevice {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return selectDevice?.call(device);
   }
@@ -193,6 +201,7 @@ class _$SelectDevice implements SelectDevice {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectDevice != null) {
@@ -210,6 +219,7 @@ class _$SelectDevice implements SelectDevice {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return selectDevice(this);
   }
@@ -223,6 +233,7 @@ class _$SelectDevice implements SelectDevice {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return selectDevice?.call(this);
   }
@@ -236,6 +247,7 @@ class _$SelectDevice implements SelectDevice {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectDevice != null) {
@@ -325,6 +337,7 @@ class _$SelectService implements SelectService {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return selectService(service);
   }
@@ -338,6 +351,7 @@ class _$SelectService implements SelectService {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return selectService?.call(service);
   }
@@ -351,6 +365,7 @@ class _$SelectService implements SelectService {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectService != null) {
@@ -368,6 +383,7 @@ class _$SelectService implements SelectService {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return selectService(this);
   }
@@ -381,6 +397,7 @@ class _$SelectService implements SelectService {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return selectService?.call(this);
   }
@@ -394,6 +411,7 @@ class _$SelectService implements SelectService {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectService != null) {
@@ -485,6 +503,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return isSmartItemActive(this.isSmartItemActive);
   }
@@ -498,6 +517,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return isSmartItemActive?.call(this.isSmartItemActive);
   }
@@ -511,6 +531,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (isSmartItemActive != null) {
@@ -528,6 +549,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return isSmartItemActive(this);
   }
@@ -541,6 +563,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return isSmartItemActive?.call(this);
   }
@@ -554,6 +577,7 @@ class _$IsSmartItemActive implements IsSmartItemActive {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (isSmartItemActive != null) {
@@ -645,6 +669,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return selectRoutineTime(selectedDate);
   }
@@ -658,6 +683,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return selectRoutineTime?.call(selectedDate);
   }
@@ -671,6 +697,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectRoutineTime != null) {
@@ -688,6 +715,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return selectRoutineTime(this);
   }
@@ -701,6 +729,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return selectRoutineTime?.call(this);
   }
@@ -714,6 +743,7 @@ class _$SelectRoutineTime implements SelectRoutineTime {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (selectRoutineTime != null) {
@@ -780,6 +810,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return getSmartItemList();
   }
@@ -793,6 +824,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return getSmartItemList?.call();
   }
@@ -806,6 +838,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (getSmartItemList != null) {
@@ -823,6 +856,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return getSmartItemList(this);
   }
@@ -836,6 +870,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return getSmartItemList?.call(this);
   }
@@ -849,6 +884,7 @@ class _$GetSmartItemList implements GetSmartItemList {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (getSmartItemList != null) {
@@ -909,6 +945,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     required TResult Function(DateTime selectedDate) selectRoutineTime,
     required TResult Function() getSmartItemList,
     required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
   }) {
     return createSmartItem();
   }
@@ -922,6 +959,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
   }) {
     return createSmartItem?.call();
   }
@@ -935,6 +973,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     TResult Function(DateTime selectedDate)? selectRoutineTime,
     TResult Function()? getSmartItemList,
     TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (createSmartItem != null) {
@@ -952,6 +991,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     required TResult Function(SelectRoutineTime value) selectRoutineTime,
     required TResult Function(GetSmartItemList value) getSmartItemList,
     required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
   }) {
     return createSmartItem(this);
   }
@@ -965,6 +1005,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
   }) {
     return createSmartItem?.call(this);
   }
@@ -978,6 +1019,7 @@ class _$CreateSmartItem implements CreateSmartItem {
     TResult Function(SelectRoutineTime value)? selectRoutineTime,
     TResult Function(GetSmartItemList value)? getSmartItemList,
     TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
     required TResult orElse(),
   }) {
     if (createSmartItem != null) {
@@ -989,4 +1031,170 @@ class _$CreateSmartItem implements CreateSmartItem {
 
 abstract class CreateSmartItem implements RoutineEvent {
   const factory CreateSmartItem() = _$CreateSmartItem;
+}
+
+/// @nodoc
+abstract class _$$UpdateSmartItemCopyWith<$Res> {
+  factory _$$UpdateSmartItemCopyWith(
+          _$UpdateSmartItem value, $Res Function(_$UpdateSmartItem) then) =
+      __$$UpdateSmartItemCopyWithImpl<$Res>;
+  $Res call({String smartItemId});
+}
+
+/// @nodoc
+class __$$UpdateSmartItemCopyWithImpl<$Res>
+    extends _$RoutineEventCopyWithImpl<$Res>
+    implements _$$UpdateSmartItemCopyWith<$Res> {
+  __$$UpdateSmartItemCopyWithImpl(
+      _$UpdateSmartItem _value, $Res Function(_$UpdateSmartItem) _then)
+      : super(_value, (v) => _then(v as _$UpdateSmartItem));
+
+  @override
+  _$UpdateSmartItem get _value => super._value as _$UpdateSmartItem;
+
+  @override
+  $Res call({
+    Object? smartItemId = freezed,
+  }) {
+    return _then(_$UpdateSmartItem(
+      smartItemId: smartItemId == freezed
+          ? _value.smartItemId
+          : smartItemId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSmartItem implements UpdateSmartItem {
+  const _$UpdateSmartItem({required this.smartItemId});
+
+  @override
+  final String smartItemId;
+
+  @override
+  String toString() {
+    return 'RoutineEvent.updateSmartItem(smartItemId: $smartItemId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSmartItem &&
+            const DeepCollectionEquality()
+                .equals(other.smartItemId, smartItemId));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(smartItemId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UpdateSmartItemCopyWith<_$UpdateSmartItem> get copyWith =>
+      __$$UpdateSmartItemCopyWithImpl<_$UpdateSmartItem>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String device) selectDevice,
+    required TResult Function(String service) selectService,
+    required TResult Function(bool isSmartItemActive) isSmartItemActive,
+    required TResult Function(DateTime selectedDate) selectRoutineTime,
+    required TResult Function() getSmartItemList,
+    required TResult Function() createSmartItem,
+    required TResult Function(String smartItemId) updateSmartItem,
+  }) {
+    return updateSmartItem(smartItemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String device)? selectDevice,
+    TResult Function(String service)? selectService,
+    TResult Function(bool isSmartItemActive)? isSmartItemActive,
+    TResult Function(DateTime selectedDate)? selectRoutineTime,
+    TResult Function()? getSmartItemList,
+    TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
+  }) {
+    return updateSmartItem?.call(smartItemId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String device)? selectDevice,
+    TResult Function(String service)? selectService,
+    TResult Function(bool isSmartItemActive)? isSmartItemActive,
+    TResult Function(DateTime selectedDate)? selectRoutineTime,
+    TResult Function()? getSmartItemList,
+    TResult Function()? createSmartItem,
+    TResult Function(String smartItemId)? updateSmartItem,
+    required TResult orElse(),
+  }) {
+    if (updateSmartItem != null) {
+      return updateSmartItem(smartItemId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(SelectDevice value) selectDevice,
+    required TResult Function(SelectService value) selectService,
+    required TResult Function(IsSmartItemActive value) isSmartItemActive,
+    required TResult Function(SelectRoutineTime value) selectRoutineTime,
+    required TResult Function(GetSmartItemList value) getSmartItemList,
+    required TResult Function(CreateSmartItem value) createSmartItem,
+    required TResult Function(UpdateSmartItem value) updateSmartItem,
+  }) {
+    return updateSmartItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SelectDevice value)? selectDevice,
+    TResult Function(SelectService value)? selectService,
+    TResult Function(IsSmartItemActive value)? isSmartItemActive,
+    TResult Function(SelectRoutineTime value)? selectRoutineTime,
+    TResult Function(GetSmartItemList value)? getSmartItemList,
+    TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
+  }) {
+    return updateSmartItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(SelectDevice value)? selectDevice,
+    TResult Function(SelectService value)? selectService,
+    TResult Function(IsSmartItemActive value)? isSmartItemActive,
+    TResult Function(SelectRoutineTime value)? selectRoutineTime,
+    TResult Function(GetSmartItemList value)? getSmartItemList,
+    TResult Function(CreateSmartItem value)? createSmartItem,
+    TResult Function(UpdateSmartItem value)? updateSmartItem,
+    required TResult orElse(),
+  }) {
+    if (updateSmartItem != null) {
+      return updateSmartItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateSmartItem implements RoutineEvent {
+  const factory UpdateSmartItem({required final String smartItemId}) =
+      _$UpdateSmartItem;
+
+  String get smartItemId => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$UpdateSmartItemCopyWith<_$UpdateSmartItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -6,24 +6,30 @@ import 'package:smart_ix_task/application/routine/routine_event.dart';
 import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
 import 'package:smart_ix_task/presentation/common_widgets/custom_text.dart';
 import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/constants/texts.dart';
-import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/widgets/create_button.dart';
+import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/widgets/update_button.dart';
 import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/widgets/custom_dropdown_button.dart';
 import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/widgets/switch_button.dart';
 import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
 
 class CurrentUserRoutineEditPageBody extends ConsumerWidget {
-  const CurrentUserRoutineEditPageBody(
-      this.currentServiceValue, this.currentDeviceValue, this.currentSelectedRoutineValue, this.isEnabled,
+  const CurrentUserRoutineEditPageBody(this.currentServiceValue, this.currentDeviceValue,
+      this.currentSelectedRoutineValue, this.isEnabled, this.smartItemId,
       {Key? key})
       : super(key: key);
 
   final String currentServiceValue;
   final String currentDeviceValue;
   final String currentSelectedRoutineValue;
+  final String smartItemId;
   final bool isEnabled;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(routineProvider);
+    final currentSelectedRoutineValueFromState = state.smartItem.routineTime;
+    final currentDeviceValueFromState = state.smartItem.device;
+    final currentServiceValueFromState = state.smartItem.service;
+
     return SizedBox(
       height: 100.h,
       width: 100.w,
@@ -61,7 +67,9 @@ class CurrentUserRoutineEditPageBody extends ConsumerWidget {
                   ),
                 ),
                 CustomText(
-                  text: currentSelectedRoutineValue,
+                  text: state.smartItem.routineTime == ""
+                      ? currentSelectedRoutineValue
+                      : currentSelectedRoutineValueFromState,
                   minFontSize: 22,
                   maxFontSize: 25,
                   textPadding: const EdgeInsets.only(),
@@ -82,7 +90,7 @@ class CurrentUserRoutineEditPageBody extends ConsumerWidget {
                       height: 10.h,
                       child: Center(
                         child: CustomText(
-                          text: currentDeviceValue,
+                          text: state.smartItem.device == "" ? currentDeviceValue : currentDeviceValueFromState,
                           minFontSize: 22,
                           maxFontSize: 25,
                           textPadding: const EdgeInsets.only(),
@@ -95,7 +103,7 @@ class CurrentUserRoutineEditPageBody extends ConsumerWidget {
                       height: 10.h,
                       child: Center(
                         child: CustomText(
-                          text: currentServiceValue,
+                          text: state.smartItem.service == "" ? currentServiceValue : currentServiceValueFromState,
                           minFontSize: 22,
                           maxFontSize: 25,
                           textPadding: const EdgeInsets.only(),
@@ -121,7 +129,7 @@ class CurrentUserRoutineEditPageBody extends ConsumerWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const CreateButton(),
+              UpdateButton(smartItemId),
               SwitchButton(isEnabled),
             ],
           )

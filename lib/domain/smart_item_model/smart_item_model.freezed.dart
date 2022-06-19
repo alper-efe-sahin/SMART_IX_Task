@@ -19,6 +19,7 @@ mixin _$SmartItemModel {
   String get device => throw _privateConstructorUsedError;
   String get service => throw _privateConstructorUsedError;
   String get routineTime => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   bool get isEnabled => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,7 +33,11 @@ abstract class $SmartItemModelCopyWith<$Res> {
           SmartItemModel value, $Res Function(SmartItemModel) then) =
       _$SmartItemModelCopyWithImpl<$Res>;
   $Res call(
-      {String device, String service, String routineTime, bool isEnabled});
+      {String device,
+      String service,
+      String routineTime,
+      String id,
+      bool isEnabled});
 }
 
 /// @nodoc
@@ -49,6 +54,7 @@ class _$SmartItemModelCopyWithImpl<$Res>
     Object? device = freezed,
     Object? service = freezed,
     Object? routineTime = freezed,
+    Object? id = freezed,
     Object? isEnabled = freezed,
   }) {
     return _then(_value.copyWith(
@@ -63,6 +69,10 @@ class _$SmartItemModelCopyWithImpl<$Res>
       routineTime: routineTime == freezed
           ? _value.routineTime
           : routineTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       isEnabled: isEnabled == freezed
           ? _value.isEnabled
@@ -80,7 +90,11 @@ abstract class _$$_SmartModelCopyWith<$Res>
       __$$_SmartModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String device, String service, String routineTime, bool isEnabled});
+      {String device,
+      String service,
+      String routineTime,
+      String id,
+      bool isEnabled});
 }
 
 /// @nodoc
@@ -99,6 +113,7 @@ class __$$_SmartModelCopyWithImpl<$Res>
     Object? device = freezed,
     Object? service = freezed,
     Object? routineTime = freezed,
+    Object? id = freezed,
     Object? isEnabled = freezed,
   }) {
     return _then(_$_SmartModel(
@@ -113,6 +128,10 @@ class __$$_SmartModelCopyWithImpl<$Res>
       routineTime: routineTime == freezed
           ? _value.routineTime
           : routineTime // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
       isEnabled: isEnabled == freezed
           ? _value.isEnabled
@@ -129,6 +148,7 @@ class _$_SmartModel implements _SmartModel {
       {required this.device,
       required this.service,
       required this.routineTime,
+      required this.id,
       required this.isEnabled});
 
   @override
@@ -138,11 +158,13 @@ class _$_SmartModel implements _SmartModel {
   @override
   final String routineTime;
   @override
+  final String id;
+  @override
   final bool isEnabled;
 
   @override
   String toString() {
-    return 'SmartItemModel(device: $device, service: $service, routineTime: $routineTime, isEnabled: $isEnabled)';
+    return 'SmartItemModel(device: $device, service: $service, routineTime: $routineTime, id: $id, isEnabled: $isEnabled)';
   }
 
   @override
@@ -154,6 +176,7 @@ class _$_SmartModel implements _SmartModel {
             const DeepCollectionEquality().equals(other.service, service) &&
             const DeepCollectionEquality()
                 .equals(other.routineTime, routineTime) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.isEnabled, isEnabled));
   }
 
@@ -163,6 +186,7 @@ class _$_SmartModel implements _SmartModel {
       const DeepCollectionEquality().hash(device),
       const DeepCollectionEquality().hash(service),
       const DeepCollectionEquality().hash(routineTime),
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(isEnabled));
 
   @JsonKey(ignore: true)
@@ -176,6 +200,7 @@ abstract class _SmartModel implements SmartItemModel {
       {required final String device,
       required final String service,
       required final String routineTime,
+      required final String id,
       required final bool isEnabled}) = _$_SmartModel;
 
   @override
@@ -184,6 +209,8 @@ abstract class _SmartModel implements SmartItemModel {
   String get service => throw _privateConstructorUsedError;
   @override
   String get routineTime => throw _privateConstructorUsedError;
+  @override
+  String get id => throw _privateConstructorUsedError;
   @override
   bool get isEnabled => throw _privateConstructorUsedError;
   @override

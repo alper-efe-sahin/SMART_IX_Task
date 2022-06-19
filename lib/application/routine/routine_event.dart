@@ -9,4 +9,5 @@ class RoutineEvent with _$RoutineEvent {
   const factory RoutineEvent.selectRoutineTime({required DateTime selectedDate}) = SelectRoutineTime;
   const factory RoutineEvent.getSmartItemList() = GetSmartItemList;
   const factory RoutineEvent.createSmartItem() = CreateSmartItem;
+   const factory RoutineEvent.updateSmartItem({required String smartItemId}) = UpdateSmartItem;
 }

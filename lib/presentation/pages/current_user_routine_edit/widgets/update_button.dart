@@ -8,12 +8,13 @@ import 'package:smart_ix_task/presentation/common_widgets/custom_text.dart';
 import 'package:smart_ix_task/presentation/pages/current_user_routine_edit/constants/texts.dart';
 import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
 
-class CreateButton extends ConsumerWidget {
-  const CreateButton({Key? key}) : super(key: key);
+class UpdateButton extends ConsumerWidget {
+  const UpdateButton(this.smartItemId, {Key? key}) : super(key: key);
 
+  final String smartItemId;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final showCreateButton = ref.watch(routineProvider).showCreateButton;
+    final showUpdateButton = ref.watch(routineProvider).showUpdateButton;
 
     return Container(
       width: 50.w,
@@ -31,8 +32,10 @@ class CreateButton extends ConsumerWidget {
         splashColor: transparentColor,
         focusColor: transparentColor,
         onTap: () {
-          if (showCreateButton) {
-            ref.read(routineProvider.notifier).mapEventsToState(const CreateSmartItem());
+          if (showUpdateButton) {
+            ref.read(routineProvider.notifier).mapEventsToState(
+                  UpdateSmartItem(smartItemId: smartItemId),
+                );
           }
         },
         child: Row(
@@ -41,7 +44,7 @@ class CreateButton extends ConsumerWidget {
             Icon(
               CupertinoIcons.check_mark_circled,
               size: 30,
-              color: showCreateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
+              color: showUpdateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
             ),
             const SizedBox(width: 10),
             CustomText(
@@ -50,7 +53,7 @@ class CreateButton extends ConsumerWidget {
               maxFontSize: 25,
               textStyle: TextStyle(
                 fontWeight: FontWeight.w600,
-                color: showCreateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
+                color: showUpdateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
               ),
               textPadding: const EdgeInsets.only(),
             ),

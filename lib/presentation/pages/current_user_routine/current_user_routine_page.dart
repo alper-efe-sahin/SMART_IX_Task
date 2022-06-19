@@ -24,6 +24,7 @@ class CurrentUserRoutinePage extends ConsumerWidget {
                 isEnabled: smartItemList[index]["isEnabled"],
                 currentServiceValue: smartItemList[index]["service"],
                 currentSelectedRoutineValue: smartItemList[index]["routineTime"],
+                smartItemId: smartItemList[index]["id"],
               ),
             );
           },

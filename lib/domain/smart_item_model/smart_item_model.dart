@@ -8,6 +8,7 @@ class SmartItemModel with _$SmartItemModel {
     required String device,
     required String service,
     required String routineTime,
+    required String id,
     required bool isEnabled,
   }) = _SmartModel;
 
@@ -15,6 +16,7 @@ class SmartItemModel with _$SmartItemModel {
         device: "",
         service: "",
         routineTime: "",
+        id: "",
         isEnabled: true,
       );
 }

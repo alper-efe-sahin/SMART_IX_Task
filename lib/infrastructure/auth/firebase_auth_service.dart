@@ -35,7 +35,6 @@ class FirebaseAuthService implements IAuthService {
         firestore.collection("users").doc(uid).set(
           {
             "uid": user.uid,
-            "smartItems": [],
           },
           SetOptions(merge: true),
         );
@@ -105,7 +104,6 @@ class FirebaseAuthService implements IAuthService {
           firestore.collection("users").doc(uid).set(
             {
               "uid": user.uid,
-              "smartItems": [],
             },
             SetOptions(merge: true),
           );

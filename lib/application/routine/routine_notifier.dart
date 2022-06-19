@@ -4,11 +4,13 @@ import 'package:smart_ix_task/application/routine/routine_event.dart';
 import 'package:smart_ix_task/application/routine/routine_state.dart';
 import 'package:smart_ix_task/domain/smart_item_model/smart_item_model.dart';
 import 'package:smart_ix_task/presentation/providers/firebase/firebase_provider.dart';
+import 'package:uuid/uuid.dart';
 
 class RoutineNotifier extends StateNotifier<RoutineState> {
   RoutineNotifier(this._read) : super(RoutineState.empty());
 
   final Reader _read;
+  final uuid = const Uuid();
 
   void mapEventsToState(RoutineEvent event) {
     event.map(
@@ -20,6 +22,7 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
             isEnabled: state.smartItem.isEnabled,
             routineTime: state.smartItem.routineTime,
             service: state.smartItem.service,
+            id: state.smartItem.id,
           ),
         );
       },
@@ -31,6 +34,7 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
             isEnabled: state.smartItem.isEnabled,
             routineTime: state.smartItem.routineTime,
             service: service,
+            id: state.smartItem.id,
           ),
         );
       },
@@ -42,6 +46,7 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
             isEnabled: isEnabled,
             routineTime: state.smartItem.routineTime,
             service: state.smartItem.service,
+            id: state.smartItem.id,
           ),
         );
       },
@@ -55,6 +60,7 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
             isEnabled: state.smartItem.isEnabled,
             routineTime: routineTime,
             service: state.smartItem.service,
+            id: state.smartItem.id,
           ),
         );
       },
@@ -66,6 +72,7 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
         state = state.copyWith(isInProgress: true);
         final firestore = _read(firestoreProvider);
         final uid = _read(authRepositoryProvider).getCurrentUser()!.uid;
+        final smartItemGeneratedId = uuid.v4();
         final currentUser = firestore.collection("users").doc(uid);
         final smartItemList = [...state.allSmartItemsList];
 
@@ -73,17 +80,42 @@ class RoutineNotifier extends StateNotifier<RoutineState> {
 
         state.copyWith(allSmartItemsList: smartItemList);
 
-        await currentUser.collection("routines").doc().set(
+        await currentUser.collection("routines").doc(smartItemGeneratedId).set(
+          {
+            "device": state.smartItem.device,
+            "service": state.smartItem.service,
+            "routineTime": state.smartItem.routineTime,
+            "isEnabled": state.smartItem.isEnabled,
+            "id": smartItemGeneratedId,
+          },
+          SetOptions(merge: true),
+        ).whenComplete(
+          () => state = state.copyWith(
+            isCreatingProcessCompletedSuccesfully: true,
+            isInProgress: false,
+          ),
+        );
+      },
+      updateSmartItem: (updateSmartItemEvent) async {
+        if (state.isInProgress) {
+          return;
+        }
+
+        state = state.copyWith(isInProgress: true);
+        final firestore = _read(firestoreProvider);
+        final uid = _read(authRepositoryProvider).getCurrentUser()!.uid;
+        final currentUser = firestore.collection("users").doc(uid);
+
+        await currentUser.collection("routines").doc(updateSmartItemEvent.smartItemId).update(
           {
             "device": state.smartItem.device,
             "service": state.smartItem.service,
             "routineTime": state.smartItem.routineTime,
             "isEnabled": state.smartItem.isEnabled,
           },
-          SetOptions(merge: true),
         ).whenComplete(
           () => state = state.copyWith(
-            isCreatingProcessCompletedSuccesfully: true,
+            isUpdatingProcessCompletedSuccesfully: true,
             isInProgress: false,
           ),
         );

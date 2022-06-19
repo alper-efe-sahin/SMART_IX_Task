@@ -19,6 +19,8 @@ mixin _$RoutineState {
   SmartItemModel get smartItem => throw _privateConstructorUsedError;
   bool get isCreatingProcessCompletedSuccesfully =>
       throw _privateConstructorUsedError;
+  bool get isUpdatingProcessCompletedSuccesfully =>
+      throw _privateConstructorUsedError;
   bool get isInProgress => throw _privateConstructorUsedError;
   List<dynamic> get allSmartItemsList => throw _privateConstructorUsedError;
   List<dynamic> get currentUsersSmartItemList =>
@@ -37,6 +39,7 @@ abstract class $RoutineStateCopyWith<$Res> {
   $Res call(
       {SmartItemModel smartItem,
       bool isCreatingProcessCompletedSuccesfully,
+      bool isUpdatingProcessCompletedSuccesfully,
       bool isInProgress,
       List<dynamic> allSmartItemsList,
       List<dynamic> currentUsersSmartItemList});
@@ -56,6 +59,7 @@ class _$RoutineStateCopyWithImpl<$Res> implements $RoutineStateCopyWith<$Res> {
   $Res call({
     Object? smartItem = freezed,
     Object? isCreatingProcessCompletedSuccesfully = freezed,
+    Object? isUpdatingProcessCompletedSuccesfully = freezed,
     Object? isInProgress = freezed,
     Object? allSmartItemsList = freezed,
     Object? currentUsersSmartItemList = freezed,
@@ -69,6 +73,11 @@ class _$RoutineStateCopyWithImpl<$Res> implements $RoutineStateCopyWith<$Res> {
           isCreatingProcessCompletedSuccesfully == freezed
               ? _value.isCreatingProcessCompletedSuccesfully
               : isCreatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      isUpdatingProcessCompletedSuccesfully:
+          isUpdatingProcessCompletedSuccesfully == freezed
+              ? _value.isUpdatingProcessCompletedSuccesfully
+              : isUpdatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
                   as bool,
       isInProgress: isInProgress == freezed
           ? _value.isInProgress
@@ -103,6 +112,7 @@ abstract class _$$_RoutineStateCopyWith<$Res>
   $Res call(
       {SmartItemModel smartItem,
       bool isCreatingProcessCompletedSuccesfully,
+      bool isUpdatingProcessCompletedSuccesfully,
       bool isInProgress,
       List<dynamic> allSmartItemsList,
       List<dynamic> currentUsersSmartItemList});
@@ -126,6 +136,7 @@ class __$$_RoutineStateCopyWithImpl<$Res>
   $Res call({
     Object? smartItem = freezed,
     Object? isCreatingProcessCompletedSuccesfully = freezed,
+    Object? isUpdatingProcessCompletedSuccesfully = freezed,
     Object? isInProgress = freezed,
     Object? allSmartItemsList = freezed,
     Object? currentUsersSmartItemList = freezed,
@@ -139,6 +150,11 @@ class __$$_RoutineStateCopyWithImpl<$Res>
           isCreatingProcessCompletedSuccesfully == freezed
               ? _value.isCreatingProcessCompletedSuccesfully
               : isCreatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      isUpdatingProcessCompletedSuccesfully:
+          isUpdatingProcessCompletedSuccesfully == freezed
+              ? _value.isUpdatingProcessCompletedSuccesfully
+              : isUpdatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
                   as bool,
       isInProgress: isInProgress == freezed
           ? _value.isInProgress
@@ -162,6 +178,7 @@ class _$_RoutineState extends _RoutineState {
   _$_RoutineState(
       {required this.smartItem,
       required this.isCreatingProcessCompletedSuccesfully,
+      required this.isUpdatingProcessCompletedSuccesfully,
       required this.isInProgress,
       required final List<dynamic> allSmartItemsList,
       required final List<dynamic> currentUsersSmartItemList})
@@ -173,6 +190,8 @@ class _$_RoutineState extends _RoutineState {
   final SmartItemModel smartItem;
   @override
   final bool isCreatingProcessCompletedSuccesfully;
+  @override
+  final bool isUpdatingProcessCompletedSuccesfully;
   @override
   final bool isInProgress;
   final List<dynamic> _allSmartItemsList;
@@ -191,7 +210,7 @@ class _$_RoutineState extends _RoutineState {
 
   @override
   String toString() {
-    return 'RoutineState(smartItem: $smartItem, isCreatingProcessCompletedSuccesfully: $isCreatingProcessCompletedSuccesfully, isInProgress: $isInProgress, allSmartItemsList: $allSmartItemsList, currentUsersSmartItemList: $currentUsersSmartItemList)';
+    return 'RoutineState(smartItem: $smartItem, isCreatingProcessCompletedSuccesfully: $isCreatingProcessCompletedSuccesfully, isUpdatingProcessCompletedSuccesfully: $isUpdatingProcessCompletedSuccesfully, isInProgress: $isInProgress, allSmartItemsList: $allSmartItemsList, currentUsersSmartItemList: $currentUsersSmartItemList)';
   }
 
   @override
@@ -203,6 +222,9 @@ class _$_RoutineState extends _RoutineState {
             const DeepCollectionEquality().equals(
                 other.isCreatingProcessCompletedSuccesfully,
                 isCreatingProcessCompletedSuccesfully) &&
+            const DeepCollectionEquality().equals(
+                other.isUpdatingProcessCompletedSuccesfully,
+                isUpdatingProcessCompletedSuccesfully) &&
             const DeepCollectionEquality()
                 .equals(other.isInProgress, isInProgress) &&
             const DeepCollectionEquality()
@@ -217,6 +239,8 @@ class _$_RoutineState extends _RoutineState {
       const DeepCollectionEquality().hash(smartItem),
       const DeepCollectionEquality()
           .hash(isCreatingProcessCompletedSuccesfully),
+      const DeepCollectionEquality()
+          .hash(isUpdatingProcessCompletedSuccesfully),
       const DeepCollectionEquality().hash(isInProgress),
       const DeepCollectionEquality().hash(_allSmartItemsList),
       const DeepCollectionEquality().hash(_currentUsersSmartItemList));
@@ -231,6 +255,7 @@ abstract class _RoutineState extends RoutineState {
   factory _RoutineState(
           {required final SmartItemModel smartItem,
           required final bool isCreatingProcessCompletedSuccesfully,
+          required final bool isUpdatingProcessCompletedSuccesfully,
           required final bool isInProgress,
           required final List<dynamic> allSmartItemsList,
           required final List<dynamic> currentUsersSmartItemList}) =
@@ -241,6 +266,9 @@ abstract class _RoutineState extends RoutineState {
   SmartItemModel get smartItem => throw _privateConstructorUsedError;
   @override
   bool get isCreatingProcessCompletedSuccesfully =>
+      throw _privateConstructorUsedError;
+  @override
+  bool get isUpdatingProcessCompletedSuccesfully =>
       throw _privateConstructorUsedError;
   @override
   bool get isInProgress => throw _privateConstructorUsedError;

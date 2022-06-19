@@ -10,20 +10,21 @@ import 'package:smart_ix_task/presentation/providers/routine/routine_provider.da
 import 'package:smart_ix_task/presentation/routes/router.gr.dart';
 
 class CurrentUserRoutineEditPage extends ConsumerWidget {
-  const CurrentUserRoutineEditPage(
-      this.currentServiceValue, this.currentDeviceValue, this.currentSelectedRoutineValue, this.isEnabled,
+  const CurrentUserRoutineEditPage(this.currentServiceValue, this.currentDeviceValue, this.currentSelectedRoutineValue,
+      this.isEnabled, this.smartItemId,
       {Key? key})
       : super(key: key);
 
   final String currentServiceValue;
   final String currentDeviceValue;
   final String currentSelectedRoutineValue;
+  final String smartItemId;
   final bool isEnabled;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<bool>(
-      routineProvider.select((state) => state.isCreatingProcessCompletedSuccesfully),
+      routineProvider.select((state) => state.isUpdatingProcessCompletedSuccesfully),
       (previousState, currentState) {
         if (currentState == true) {
           ref.read(routineProvider.notifier).mapEventsToState(const GetSmartItemList());
@@ -66,6 +67,7 @@ class CurrentUserRoutineEditPage extends ConsumerWidget {
           currentDeviceValue,
           currentSelectedRoutineValue,
           isEnabled,
+          smartItemId,
         ),
       ),
     );

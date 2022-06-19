@@ -8,6 +8,7 @@ class RoutineState with _$RoutineState {
   factory RoutineState({
     required SmartItemModel smartItem,
     required bool isCreatingProcessCompletedSuccesfully,
+    required bool isUpdatingProcessCompletedSuccesfully,
     required bool isInProgress,
     required List allSmartItemsList,
     required List currentUsersSmartItemList,
@@ -18,10 +19,12 @@ class RoutineState with _$RoutineState {
   factory RoutineState.empty() => RoutineState(
         smartItem: SmartItemModel.empty(),
         isCreatingProcessCompletedSuccesfully: false,
+        isUpdatingProcessCompletedSuccesfully: false,
         isInProgress: false,
         allSmartItemsList: [],
         currentUsersSmartItemList: [],
       );
 
   bool get showCreateButton => smartItem.device != "" && smartItem.routineTime != "" && smartItem.service != "";
+  bool get showUpdateButton => smartItem.device != "" && smartItem.routineTime != "" && smartItem.service != "";
 }
