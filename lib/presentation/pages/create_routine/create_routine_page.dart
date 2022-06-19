@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smart_ix_task/application/routine/routine_event.dart';
 import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
 import 'package:smart_ix_task/presentation/pages/create_routine/widgets/create_routine_page_body.dart';
 import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
@@ -13,6 +14,16 @@ class CreateRoutinePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.listen<bool>(
+      routineProvider.select((state) => state.isCreatingProcessCompletedSuccesfully),
+      (previousState, currentState) {
+        if (currentState == true) {
+          ref.read(routineProvider.notifier).mapEventsToState(const GetSmartItemList());
+          AutoRouter.of(context).replace(const RouteNavigator());
+        }
+      },
+    );
+
     return WillPopScope(
       onWillPop: () => Future<bool>.value(false),
       child: Scaffold(

@@ -9,6 +9,8 @@ class CustomText extends StatelessWidget {
     required this.maxFontSize,
     required this.textPadding,
     this.textStyle,
+    this.overflow,
+    this.maxLines,
   }) : super(key: key);
 
   final String text;
@@ -16,6 +18,8 @@ class CustomText extends StatelessWidget {
   final double maxFontSize;
   final TextStyle? textStyle;
   final EdgeInsetsGeometry textPadding;
+  final TextOverflow? overflow;
+  final int? maxLines;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +30,8 @@ class CustomText extends StatelessWidget {
         minFontSize: minFontSize,
         maxFontSize: maxFontSize,
         style: textStyle,
+        overflow: overflow,
+        maxLines: maxLines,
         textAlign: TextAlign.center,
       ),
     );

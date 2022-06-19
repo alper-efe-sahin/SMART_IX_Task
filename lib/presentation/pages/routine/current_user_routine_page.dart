@@ -3,12 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:smart_ix_task/presentation/common_widgets/smart_item.dart';
 import 'package:smart_ix_task/presentation/providers/routine/routine_provider.dart';
 
-class DashboardPageBody extends ConsumerWidget {
-  const DashboardPageBody({Key? key}) : super(key: key);
+class CurrentUserRoutinePage extends ConsumerWidget {
+  const CurrentUserRoutinePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final smartItemList = List.from(ref.watch(routineProvider).allSmartItemsList.reversed);
+    final smartItemList = List.from(ref.watch(routineProvider).currentUsersSmartItemList.reversed);
 
     return GridView.builder(
       itemCount: smartItemList.length,

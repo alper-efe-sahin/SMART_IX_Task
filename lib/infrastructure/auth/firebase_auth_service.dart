@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -24,8 +25,24 @@ class FirebaseAuthService implements IAuthService {
 
   @override
   Future<void> signInAnonymously() async {
-    _read(firebaseAuthProvider).signInAnonymously();
+    final firestore = _read(firestoreProvider);
+
+    _read(firebaseAuthProvider).signInAnonymously().then(
+      (UserCredential userCredential) {
+        final user = userCredential.user;
+        final uid = user!.uid;
+
+        firestore.collection("users").doc(uid).set(
+          {
+            "uid": user.uid,
+            "smartItems": [],
+          },
+          SetOptions(merge: true),
+        );
+      },
+    );
   }
+
   @override
   Stream<Either<AuthFailure, Tuple2<String, int?>>> signInWithPhoneNumber({
     required String phoneNumber,
@@ -73,12 +90,27 @@ class FirebaseAuthService implements IAuthService {
   }) async {
     try {
       final firebaseAuth = _read(firebaseAuthProvider);
+      final firestore = _read(firestoreProvider);
+
       final PhoneAuthCredential phoneAuthCredential = PhoneAuthProvider.credential(
         verificationId: verificationId,
         smsCode: smsCode,
       );
 
-      await firebaseAuth.signInWithCredential(phoneAuthCredential);
+      await firebaseAuth.signInWithCredential(phoneAuthCredential).then(
+        (UserCredential userCredential) {
+          final user = userCredential.user;
+          final uid = user!.uid;
+
+          firestore.collection("users").doc(uid).set(
+            {
+              "uid": user.uid,
+              "smartItems": [],
+            },
+            SetOptions(merge: true),
+          );
+        },
+      );
       return right(unit);
     } on FirebaseAuthException catch (e) {
       if (e.code == "session-expired") {

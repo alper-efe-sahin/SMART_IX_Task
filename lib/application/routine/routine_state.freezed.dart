@@ -17,6 +17,12 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$RoutineState {
   SmartItemModel get smartItem => throw _privateConstructorUsedError;
+  bool get isCreatingProcessCompletedSuccesfully =>
+      throw _privateConstructorUsedError;
+  bool get isInProgress => throw _privateConstructorUsedError;
+  List<dynamic> get allSmartItemsList => throw _privateConstructorUsedError;
+  List<dynamic> get currentUsersSmartItemList =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RoutineStateCopyWith<RoutineState> get copyWith =>
@@ -28,7 +34,12 @@ abstract class $RoutineStateCopyWith<$Res> {
   factory $RoutineStateCopyWith(
           RoutineState value, $Res Function(RoutineState) then) =
       _$RoutineStateCopyWithImpl<$Res>;
-  $Res call({SmartItemModel smartItem});
+  $Res call(
+      {SmartItemModel smartItem,
+      bool isCreatingProcessCompletedSuccesfully,
+      bool isInProgress,
+      List<dynamic> allSmartItemsList,
+      List<dynamic> currentUsersSmartItemList});
 
   $SmartItemModelCopyWith<$Res> get smartItem;
 }
@@ -44,12 +55,33 @@ class _$RoutineStateCopyWithImpl<$Res> implements $RoutineStateCopyWith<$Res> {
   @override
   $Res call({
     Object? smartItem = freezed,
+    Object? isCreatingProcessCompletedSuccesfully = freezed,
+    Object? isInProgress = freezed,
+    Object? allSmartItemsList = freezed,
+    Object? currentUsersSmartItemList = freezed,
   }) {
     return _then(_value.copyWith(
       smartItem: smartItem == freezed
           ? _value.smartItem
           : smartItem // ignore: cast_nullable_to_non_nullable
               as SmartItemModel,
+      isCreatingProcessCompletedSuccesfully:
+          isCreatingProcessCompletedSuccesfully == freezed
+              ? _value.isCreatingProcessCompletedSuccesfully
+              : isCreatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      isInProgress: isInProgress == freezed
+          ? _value.isInProgress
+          : isInProgress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      allSmartItemsList: allSmartItemsList == freezed
+          ? _value.allSmartItemsList
+          : allSmartItemsList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      currentUsersSmartItemList: currentUsersSmartItemList == freezed
+          ? _value.currentUsersSmartItemList
+          : currentUsersSmartItemList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 
@@ -68,7 +100,12 @@ abstract class _$$_RoutineStateCopyWith<$Res>
           _$_RoutineState value, $Res Function(_$_RoutineState) then) =
       __$$_RoutineStateCopyWithImpl<$Res>;
   @override
-  $Res call({SmartItemModel smartItem});
+  $Res call(
+      {SmartItemModel smartItem,
+      bool isCreatingProcessCompletedSuccesfully,
+      bool isInProgress,
+      List<dynamic> allSmartItemsList,
+      List<dynamic> currentUsersSmartItemList});
 
   @override
   $SmartItemModelCopyWith<$Res> get smartItem;
@@ -88,12 +125,33 @@ class __$$_RoutineStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? smartItem = freezed,
+    Object? isCreatingProcessCompletedSuccesfully = freezed,
+    Object? isInProgress = freezed,
+    Object? allSmartItemsList = freezed,
+    Object? currentUsersSmartItemList = freezed,
   }) {
     return _then(_$_RoutineState(
       smartItem: smartItem == freezed
           ? _value.smartItem
           : smartItem // ignore: cast_nullable_to_non_nullable
               as SmartItemModel,
+      isCreatingProcessCompletedSuccesfully:
+          isCreatingProcessCompletedSuccesfully == freezed
+              ? _value.isCreatingProcessCompletedSuccesfully
+              : isCreatingProcessCompletedSuccesfully // ignore: cast_nullable_to_non_nullable
+                  as bool,
+      isInProgress: isInProgress == freezed
+          ? _value.isInProgress
+          : isInProgress // ignore: cast_nullable_to_non_nullable
+              as bool,
+      allSmartItemsList: allSmartItemsList == freezed
+          ? _value._allSmartItemsList
+          : allSmartItemsList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
+      currentUsersSmartItemList: currentUsersSmartItemList == freezed
+          ? _value._currentUsersSmartItemList
+          : currentUsersSmartItemList // ignore: cast_nullable_to_non_nullable
+              as List<dynamic>,
     ));
   }
 }
@@ -101,14 +159,39 @@ class __$$_RoutineStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_RoutineState extends _RoutineState {
-  _$_RoutineState({required this.smartItem}) : super._();
+  _$_RoutineState(
+      {required this.smartItem,
+      required this.isCreatingProcessCompletedSuccesfully,
+      required this.isInProgress,
+      required final List<dynamic> allSmartItemsList,
+      required final List<dynamic> currentUsersSmartItemList})
+      : _allSmartItemsList = allSmartItemsList,
+        _currentUsersSmartItemList = currentUsersSmartItemList,
+        super._();
 
   @override
   final SmartItemModel smartItem;
+  @override
+  final bool isCreatingProcessCompletedSuccesfully;
+  @override
+  final bool isInProgress;
+  final List<dynamic> _allSmartItemsList;
+  @override
+  List<dynamic> get allSmartItemsList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allSmartItemsList);
+  }
+
+  final List<dynamic> _currentUsersSmartItemList;
+  @override
+  List<dynamic> get currentUsersSmartItemList {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_currentUsersSmartItemList);
+  }
 
   @override
   String toString() {
-    return 'RoutineState(smartItem: $smartItem)';
+    return 'RoutineState(smartItem: $smartItem, isCreatingProcessCompletedSuccesfully: $isCreatingProcessCompletedSuccesfully, isInProgress: $isInProgress, allSmartItemsList: $allSmartItemsList, currentUsersSmartItemList: $currentUsersSmartItemList)';
   }
 
   @override
@@ -116,12 +199,27 @@ class _$_RoutineState extends _RoutineState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RoutineState &&
-            const DeepCollectionEquality().equals(other.smartItem, smartItem));
+            const DeepCollectionEquality().equals(other.smartItem, smartItem) &&
+            const DeepCollectionEquality().equals(
+                other.isCreatingProcessCompletedSuccesfully,
+                isCreatingProcessCompletedSuccesfully) &&
+            const DeepCollectionEquality()
+                .equals(other.isInProgress, isInProgress) &&
+            const DeepCollectionEquality()
+                .equals(other._allSmartItemsList, _allSmartItemsList) &&
+            const DeepCollectionEquality().equals(
+                other._currentUsersSmartItemList, _currentUsersSmartItemList));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(smartItem));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(smartItem),
+      const DeepCollectionEquality()
+          .hash(isCreatingProcessCompletedSuccesfully),
+      const DeepCollectionEquality().hash(isInProgress),
+      const DeepCollectionEquality().hash(_allSmartItemsList),
+      const DeepCollectionEquality().hash(_currentUsersSmartItemList));
 
   @JsonKey(ignore: true)
   @override
@@ -130,12 +228,27 @@ class _$_RoutineState extends _RoutineState {
 }
 
 abstract class _RoutineState extends RoutineState {
-  factory _RoutineState({required final SmartItemModel smartItem}) =
+  factory _RoutineState(
+          {required final SmartItemModel smartItem,
+          required final bool isCreatingProcessCompletedSuccesfully,
+          required final bool isInProgress,
+          required final List<dynamic> allSmartItemsList,
+          required final List<dynamic> currentUsersSmartItemList}) =
       _$_RoutineState;
   _RoutineState._() : super._();
 
   @override
   SmartItemModel get smartItem => throw _privateConstructorUsedError;
+  @override
+  bool get isCreatingProcessCompletedSuccesfully =>
+      throw _privateConstructorUsedError;
+  @override
+  bool get isInProgress => throw _privateConstructorUsedError;
+  @override
+  List<dynamic> get allSmartItemsList => throw _privateConstructorUsedError;
+  @override
+  List<dynamic> get currentUsersSmartItemList =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_RoutineStateCopyWith<_$_RoutineState> get copyWith =>

@@ -7,5 +7,6 @@ class RoutineEvent with _$RoutineEvent {
   const factory RoutineEvent.selectService({required String service}) = SelectService;
   const factory RoutineEvent.isSmartItemActive({required bool isSmartItemActive}) = IsSmartItemActive;
   const factory RoutineEvent.selectRoutineTime({required DateTime selectedDate}) = SelectRoutineTime;
+  const factory RoutineEvent.getSmartItemList() = GetSmartItemList;
   const factory RoutineEvent.createSmartItem() = CreateSmartItem;
 }

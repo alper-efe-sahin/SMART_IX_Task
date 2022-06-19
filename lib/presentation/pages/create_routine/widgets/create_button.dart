@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sizer/sizer.dart';
+import 'package:smart_ix_task/application/routine/routine_event.dart';
 import 'package:smart_ix_task/presentation/common_widgets/colors.dart';
 import 'package:smart_ix_task/presentation/common_widgets/custom_text.dart';
 import 'package:smart_ix_task/presentation/pages/create_routine/constants/texts.dart';
@@ -12,6 +13,8 @@ class CreateButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final showCreateButton = ref.watch(routineProvider).showCreateButton;
+
     return Container(
       width: 50.w,
       height: 6.h,
@@ -28,28 +31,28 @@ class CreateButton extends ConsumerWidget {
         splashColor: transparentColor,
         focusColor: transparentColor,
         onTap: () {
-          if (ref.read(routineProvider).showCreateButton) {
-            //! then create item
+          if (showCreateButton) {
+            ref.read(routineProvider.notifier).mapEventsToState(const CreateSmartItem());
           }
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
+          children: [
             Icon(
               CupertinoIcons.check_mark_circled,
               size: 30,
-              color: customIndigoColor,
+              color: showCreateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             CustomText(
               text: createText,
               minFontSize: 21,
               maxFontSize: 25,
               textStyle: TextStyle(
                 fontWeight: FontWeight.w600,
-                color: customIndigoColor,
+                color: showCreateButton ? customIndigoColor : customIndigoColor.withOpacity(0.5),
               ),
-              textPadding: EdgeInsets.only(),
+              textPadding: const EdgeInsets.only(),
             ),
           ],
         ),

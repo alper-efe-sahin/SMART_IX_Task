@@ -17,7 +17,7 @@ import '../pages/create_routine/create_routine_page.dart' as _i5;
 import '../pages/dashboard/dashboard_page.dart' as _i6;
 import '../pages/landing/landing_page.dart' as _i1;
 import '../pages/navigator/navigator_page.dart' as _i2;
-import '../pages/routine/routine_page.dart' as _i7;
+import '../pages/routine/current_user_routine_page.dart' as _i7;
 import '../pages/sign_in/sign_in_page.dart' as _i3;
 import '../pages/verification_page/sign_in_verification_page.dart' as _i4;
 
@@ -51,9 +51,9 @@ class AppRouter extends _i8.RootStackRouter {
       return _i8.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.DashboardPage());
     },
-    RoutineRoute.name: (routeData) {
+    CurrentUserRoutineRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.RoutinePage());
+          routeData: routeData, child: const _i7.CurrentUserRoutinePage());
     }
   };
 
@@ -65,8 +65,9 @@ class AppRouter extends _i8.RootStackRouter {
             children: [
               _i8.RouteConfig(DashboardRoute.name,
                   path: 'dashboard-page', parent: RouteNavigator.name),
-              _i8.RouteConfig(RoutineRoute.name,
-                  path: 'routine-page', parent: RouteNavigator.name)
+              _i8.RouteConfig(CurrentUserRoutineRoute.name,
+                  path: 'current-user-routine-page',
+                  parent: RouteNavigator.name)
             ]),
         _i8.RouteConfig(SignInRoute.name, path: '/sign-in-page'),
         _i8.RouteConfig(SignInVerificationRoute.name,
@@ -128,9 +129,10 @@ class DashboardRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.RoutinePage]
-class RoutineRoute extends _i8.PageRouteInfo<void> {
-  const RoutineRoute() : super(RoutineRoute.name, path: 'routine-page');
+/// [_i7.CurrentUserRoutinePage]
+class CurrentUserRoutineRoute extends _i8.PageRouteInfo<void> {
+  const CurrentUserRoutineRoute()
+      : super(CurrentUserRoutineRoute.name, path: 'current-user-routine-page');
 
-  static const String name = 'RoutineRoute';
+  static const String name = 'CurrentUserRoutineRoute';
 }

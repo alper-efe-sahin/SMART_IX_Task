@@ -61,7 +61,7 @@ class PageNavigator extends ConsumerWidget {
         ),
         routes: const [
           DashboardRoute(),
-          RoutineRoute(),
+          CurrentUserRoutineRoute(),
         ],
       ),
     );

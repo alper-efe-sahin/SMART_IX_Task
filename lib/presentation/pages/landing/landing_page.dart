@@ -22,9 +22,9 @@ class _LandingPageState extends ConsumerState<LandingPage> {
       (_) {
         final user = ref.read(authStateProvider.notifier).appInit();
         if (user == null) {
-          AutoRouter.of(context).replace(const RoutineRoute());
-        } else {
           AutoRouter.of(context).replace(const SignInRoute());
+        } else {
+          AutoRouter.of(context).replace(const RouteNavigator());
         }
       },
     );
