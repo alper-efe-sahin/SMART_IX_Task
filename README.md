@@ -1,9 +1,21 @@
 # smart_ix_task
 
 ## Note!
-To keep it simple (since this is just a task), when I write codes, I push also firebase keys etc., because I know that you will use it.
+* To keep it simple (since this is just a task), when I write codes, I push also firebase keys etc., because I know that you will use it.
 
-## Current packages:
+* Also I get the phone number sign in codes/ui from my own project, you can see the project and images/gifs from here: 
+https://github.com/alper-efe-sahin/phone_number_sign_in_cubit
+
+## How to use?
+This application has 2 sign-in methods: Firstly, you can sign in via your phone number, and second anonymously.
+
+After logging in, you can see 2 different pages which are nested. The first one is the dashboard, and the second one is the routines.
+
+To create a new routine, go to the dashboard and click the plus (+) button.
+
+While all smart items/routines are in the dashboard, the routines of the current user are on the routines page. You can update them also via routines page. You just need to click the item which needs an update.
+
+## Packages:
 
  * auto_size_text: ^3.0.0
   
@@ -30,6 +42,12 @@ To keep it simple (since this is just a task), when I write codes, I push also f
  * cupertino_icons: ^1.0.2
   
  * salomon_bottom_bar: ^3.3.1
+
+ * dropdown_button2: ^1.6.2
+
+ * flutter_datetime_picker: ^1.5.1
+
+ * uuid: ^3.0.6
   
  * dartz: ^0.10.1
   
